@@ -12,6 +12,7 @@ const signer = new Wallet(FromKeystore(keystoreStr, process.env.PASSWD), provide
 const IPPoolShadow = new ethers.Contract(hmytestAddress.IPPoolShadows['1'], abi, signer)
 async function IPAdd(token, tokenId, owner) {
     return IPPoolShadow.IPAdd(token, tokenId, owner)
+    //return IPPoolShadow.callStatic.IPAdd(token, tokenId, owner)
 }
 
 let promise = Promise.resolve()

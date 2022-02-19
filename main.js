@@ -24,9 +24,9 @@ server.addMethod('Authorize', async ({ domain, message, signature }) => {
     } = message
     const account = verifyTypeData('Authorize', domain, message, signature)
     if (!EQ(account, verifyingContract)) throw new Error(`invalid account: ${account} != ${verifyingContract}`)
-    const owner = await ownerOf(token, tokenID)
-    if(!EQ(account, owner)) throw new Error(`invalid owner: ${account} != ${owner}`)
-    return IPAddTask(token, tokenID, verifyingContract)
+    //const owner = await ownerOf(token, tokenID)
+    //if(!EQ(account, owner)) throw new Error(`invalid owner: ${account} != ${owner}`)
+    return IPAddTask(token, tokenID, account)
     //return IPAdd(token, tokenID, verifyingContract).then(tx=>tx.hash)
 });
 
