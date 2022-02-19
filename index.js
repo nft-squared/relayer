@@ -1,4 +1,3 @@
-const cors = require("cors");
 const { IPAddTask } = require("./IPPoolShdow");
 const { verifyTypeData } = require("./EIP712");
 const { ownerOf } = require("./IPVerifier");
