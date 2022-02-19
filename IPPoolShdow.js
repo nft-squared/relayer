@@ -9,7 +9,7 @@ const provider = new ethers.providers.StaticJsonRpcProvider('https://api.s0.b.hm
 const keystoreStr = fs.readFileSync(process.env.KEYSTORE)
 const signer = new Wallet(FromKeystore(keystoreStr, process.env.PASSWD), provider)
 
-const IPPoolShadow = new ethers.Contract(hmytestAddress.IPPoolShadows['1'], abi, signer)
+const IPPoolShadow = new ethers.Contract(hmytestAddress.IPPoolShadows['4'], abi, signer)
 async function IPAdd(token, tokenId, owner) {
     return IPPoolShadow.IPAdd(token, tokenId, owner)
     //return IPPoolShadow.callStatic.IPAdd(token, tokenId, owner)
